@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orcamentos", "Strategy\Orcamentos.csproj", "{7ED5F7C4-F633-4949-A260-0131992D7AB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orcamentos", "Orcamentos\Orcamentos.csproj", "{7ED5F7C4-F633-4949-A260-0131992D7AB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Investimentos", "Investimentos\Investimentos.csproj", "{9063344D-CA3E-4FD2-87AB-695C1727D280}"
 EndProject
