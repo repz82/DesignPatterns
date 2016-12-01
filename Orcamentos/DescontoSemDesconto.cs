@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Orcamentos
 {
-    public class ISS : Imposto
+    public class DescontoSemDesconto : Desconto
     {
-        public double Calcula(Orcamento orcamento)
+        public Desconto Proximo { get; set; }
+
+        public double Desconta(Orcamento orcamento)
         {
-            return orcamento.Valor * 0.06;
+            return 0;
         }
     }
 }

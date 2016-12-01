@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Orcamentos
 {
-    public interface Imposto
+    public interface Desconto
     {
-        double Calcula(Orcamento orcamento);
+        double Desconta(Orcamento orcamento);
+        Desconto Proximo { get; set; }
     }
 }
