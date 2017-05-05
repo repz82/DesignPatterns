@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Orcamentos
 {
-    public class ISS : Imposto
+    public class IMA : Imposto
     {
-        public ISS(Imposto outroImposto) : base(outroImposto)
+        public IMA(Imposto outroImposto) : base(outroImposto)
         {
             OutroImposto = outroImposto;
         }
-        public ISS() : base()
+        public IMA() : base()
         {
 
         }
         public override double Calcula(Orcamento orcamento)
         {
-            return orcamento.Valor * 0.06 + CalculoDoOutroImposto(orcamento);
+            return orcamento.Valor * 0.2 + CalculoDoOutroImposto(orcamento);
         }
     }
 }

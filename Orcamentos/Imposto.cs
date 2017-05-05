@@ -6,8 +6,25 @@ using System.Threading.Tasks;
 
 namespace Orcamentos
 {
-    public interface Imposto
+    public abstract class Imposto
     {
-        double Calcula(Orcamento orcamento);
+        public Imposto OutroImposto { get; set; }
+        public Imposto(Imposto outroImposto)
+        {
+            OutroImposto = outroImposto;
+        }
+
+        public Imposto()
+        {
+            OutroImposto = null;
+        }
+
+        public abstract double Calcula(Orcamento orcamento);
+
+        protected double CalculoDoOutroImposto(Orcamento orcamento)
+        {
+            return OutroImposto == null ? 0 : OutroImposto.Calcula(orcamento);
+        }
     }
 }
+
