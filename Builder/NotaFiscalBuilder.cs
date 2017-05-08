@@ -15,7 +15,19 @@ namespace Builder
         public DateTime Data { get; private set; }
         public string Observacoes { get; private set; }
 
+        private IList<AcaoNF> acoes = new List<AcaoNF>();
+
         private IList<ItemNota> Itens = new List<ItemNota>();
+
+        public NotaFiscalBuilder()
+        {
+            Data = DateTime.Now;
+        }
+
+        public void NovaAcao(AcaoNF acao)
+        {
+            acoes.Add(acao);
+        }
 
         public NotaFiscalBuilder ParaEmpresa(string razaoSocial)
         {
@@ -37,9 +49,9 @@ namespace Builder
             return this;
         }
 
-        public NotaFiscalBuilder NaDataAtual()
+        public NotaFiscalBuilder NaDataAtual(DateTime data)
         {
-            Data = DateTime.Now;
+            Data = data;
             return this;
         }
 
@@ -51,8 +63,15 @@ namespace Builder
 
         public NotaFiscal Constroi()
         {
-            return new NotaFiscal(RazaoSocial, Cnpj, Data, ValorTotal,
+            var nf = new NotaFiscal(RazaoSocial, Cnpj, Data, ValorTotal,
                                 Impostos, Itens, Observacoes);
+
+            foreach (var acao in acoes)
+            {
+                acao.Executa(nf);
+            }
+
+            return nf;
         }
     }
 }

@@ -39,9 +39,15 @@ namespace Builder
                 .ComItem(item2)
                 .ComItem(item3)
                 .ComObservacoes("entregar nf pessoalmente")
-                .NaDataAtual();
+                .NaDataAtual(DateTime.Now);
+
+            criador.NovaAcao(new EnviarEmail());
+            criador.NovaAcao(new EnviarSMS());
+            criador.NovaAcao(new Imprimir());
+            criador.NovaAcao(new NotaFiscalDAO());
 
             var nf = criador.Constroi();
+            
 
             Console.WriteLine($"{nf.Cnpj}");
             Console.WriteLine($"{nf.ValorBruto}");
