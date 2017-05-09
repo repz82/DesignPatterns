@@ -15,7 +15,7 @@ namespace Builder
         public DateTime Data { get; private set; }
         public string Observacoes { get; private set; }
 
-        private IList<AcaoNF> acoes = new List<AcaoNF>();
+        private IList<AcaoNF> Acoes = new List<AcaoNF>();
 
         private IList<ItemNota> Itens = new List<ItemNota>();
 
@@ -26,7 +26,7 @@ namespace Builder
 
         public void NovaAcao(AcaoNF acao)
         {
-            acoes.Add(acao);
+            Acoes.Add(acao);
         }
 
         public NotaFiscalBuilder ParaEmpresa(string razaoSocial)
@@ -61,12 +61,18 @@ namespace Builder
             return this;
         }
 
+        public NotaFiscalBuilder ComAcao(IList<AcaoNF> acoes)
+        {
+            Acoes = acoes;
+            return this;
+        }
+
         public NotaFiscal Constroi()
         {
             var nf = new NotaFiscal(RazaoSocial, Cnpj, Data, ValorTotal,
                                 Impostos, Itens, Observacoes);
 
-            foreach (var acao in acoes)
+            foreach (var acao in Acoes)
             {
                 acao.Executa(nf);
             }

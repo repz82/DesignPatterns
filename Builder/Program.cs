@@ -31,6 +31,13 @@ namespace Builder
 
             var item3 = cItem3.Constroi();
 
+            var list = new List<AcaoNF>();
+            list.Add(new EnviarEmail());
+            list.Add(new EnviarSMS());
+            list.Add(new Imprimir());
+            list.Add(new NotaFiscalDAO());
+            list.Add(new Multiplicador(1.12));
+
             var criador = new NotaFiscalBuilder();
             criador
                 .ParaEmpresa("Teste")
@@ -39,12 +46,8 @@ namespace Builder
                 .ComItem(item2)
                 .ComItem(item3)
                 .ComObservacoes("entregar nf pessoalmente")
-                .NaDataAtual(DateTime.Now);
-
-            criador.NovaAcao(new EnviarEmail());
-            criador.NovaAcao(new EnviarSMS());
-            criador.NovaAcao(new Imprimir());
-            criador.NovaAcao(new NotaFiscalDAO());
+                .NaDataAtual(DateTime.Now)
+                .ComAcao(list);
 
             var nf = criador.Constroi();
             

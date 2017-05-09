@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{72FC6BBD-E69D-482F-84CC-ECDBCD04103B}</ProjectGuid>
+    <ProjectGuid>{A7A8F144-1B85-4CA0-9478-F5F3769BDD00}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Builder</RootNamespace>
-    <AssemblyName>Builder</AssemblyName>
+    <RootNamespace>Solid</RootNamespace>
+    <AssemblyName>Solid</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,16 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcaoNF.cs" />
-    <Compile Include="Multiplicador.cs" />
-    <Compile Include="NotaFiscaDAO.cs" />
-    <Compile Include="Imprimir.cs" />
-    <Compile Include="EnviarSMS.cs" />
-    <Compile Include="EnviarEmail.cs" />
-    <Compile Include="ItemNotaBuilder.cs" />
-    <Compile Include="ItemNota.cs" />
-    <Compile Include="NotaFiscalBuilder.cs" />
-    <Compile Include="NotaFiscal.cs" />
+    <Compile Include="CalculadoraDeSalario.cs" />
+    <Compile Include="Cargo.cs" />
+    <Compile Include="DBA.cs" />
+    <Compile Include="Tester.cs" />
+    <Compile Include="Desenvolvedor.cs" />
+    <Compile Include="QuinzeOuVinteCincoPorcento.cs" />
+    <Compile Include="DezOuVintePorcento.cs" />
+    <Compile Include="Funcionario.cs" />
+    <Compile Include="IRegraCalculo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
