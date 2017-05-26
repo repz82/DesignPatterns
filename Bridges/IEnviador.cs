@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Visitor;
 
-namespace Interpreter
+namespace Bridges
 {
-    public interface IExpressao
+    public interface IEnviador
     {
-        int Avalia();
-        void Aceita(IVisitor impressora);
+        void Envia(IMensagem mensagem);
     }
 }

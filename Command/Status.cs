@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Visitor;
 
-namespace Interpreter
+namespace Command
 {
-    public interface IExpressao
+    public enum Status
     {
-        int Avalia();
-        void Aceita(IVisitor impressora);
+        Novo,
+        Processado,
+        Pago,
+        ItemSeparado,
+        Entregue
     }
 }

@@ -1,17 +1,23 @@
-﻿namespace Interpreter
+﻿using Visitor;
+
+namespace Interpreter
 {
-    internal class Numero : IExpressao
+    public class Numero : IExpressao
     {
-        private int numero;
+        public int Valor { get; private set;  }
 
         public Numero(int numero)
         {
-            this.numero = numero;
+            Valor = numero;
         }
 
         public int Avalia()
         {
-            return this.numero;
+            return Valor;
+        }
+        public void Aceita(IVisitor impressora)
+        {
+            impressora.ImprimeNumero(this);
         }
     }
 }

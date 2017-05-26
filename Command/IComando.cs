@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Visitor;
 
-namespace Interpreter
+namespace Command
 {
-    public interface IExpressao
+    public interface IComando
     {
-        int Avalia();
-        void Aceita(IVisitor impressora);
+        void Executa();
     }
 }

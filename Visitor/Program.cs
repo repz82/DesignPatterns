@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Visitor;
 
-namespace Interpreter
+namespace Visitor
 {
-    public interface IExpressao
+    class Program
     {
-        int Avalia();
-        void Aceita(IVisitor impressora);
+        static void Main(string[] args)
+        {
+        }
     }
 }

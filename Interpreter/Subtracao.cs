@@ -1,19 +1,25 @@
-﻿namespace Interpreter
+﻿using Visitor;
+
+namespace Interpreter
 {
-    internal class Subtracao : IExpressao
+    public class Subtracao : IExpressao
     {
-        private IExpressao esquerda;
-        private IExpressao direita;
+        public IExpressao Esquerda { get; private set; }
+        public IExpressao Direita { get; private set; }
 
         public Subtracao(IExpressao esquerda, IExpressao direita)
         {
-            this.esquerda = esquerda;
-            this.direita = direita;
+            Esquerda = esquerda;
+            Direita = direita;
         }
 
         public int Avalia()
         {
-            return esquerda.Avalia() - direita.Avalia();
+            return Esquerda.Avalia() - Direita.Avalia();
+        }
+        public void Aceita(IVisitor impressora)
+        {
+            impressora.ImprimeSubtracao(this);
         }
     }
 }
